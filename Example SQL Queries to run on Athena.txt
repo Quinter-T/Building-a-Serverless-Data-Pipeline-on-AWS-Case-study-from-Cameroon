@@ -1,0 +1,67 @@
+SELECT * FROM "AwsDataCatalog"."etl-db"."vaccination_data_2025" limit 10;
+
+
+
+ 1. Basic Select and Limit (Data Preview)
+
+This query is exactly what you provided. It retrieves all columns for the first 10 records, confirming basic connectivity and data readability.
+
+
+SELECT * FROM "AwsDataCatalog"."etl-db"."vaccination_data_2025" 
+LIMIT 10;
+
+
+-----
+
+2. Count Total Records
+
+This query returns the total number of rows in your vaccination dataset.
+
+
+SELECT COUNT(*) 
+FROM "AwsDataCatalog"."etl-db"."vaccination_data_2025";
+
+
+-----
+
+
+
+3. Filter by Condition (Find Specific Babies)
+
+SELECT 
+    * FROM "AwsDataCatalog"."etl-db"."vaccination_data_2025"
+WHERE 
+    "baby_name" IN ('Agnes Beye', 'Bella Mballa', 'Samir Ngono');
+
+--------------------------------------------------------------------------------------------------------------
+SELECT 
+    * FROM "AwsDataCatalog"."etl-db"."vaccination_data_2025"
+WHERE 
+    "col0" IN ('Agnes Beye', 'Bella Mballa', 'Samir Ngono');
+
+
+-----
+
+4. Filter by Condition (Find Specific Babies)
+
+This query finds all babies whose name starts with 'B' and retrieves their name and phone number.
+
+
+SELECT 
+    "col0", 
+    "col2" 
+FROM "AwsDataCatalog"."etl-db"."vaccination_data_2025"
+WHERE "col0" LIKE 'B%'
+LIMIT 5;
+
+--------------------------------------------------------------------------------------------------------------
+SELECT 
+    "baby_name", 
+    "mother's_phone_number" 
+FROM "AwsDataCatalog"."etl-db"."vaccination_data_2025"
+WHERE "baby_name" LIKE 'B%'
+LIMIT 5;
+
+
+-----
+
